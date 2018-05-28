@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "Different from vue1.x and vue2.x"
-subtitle:   " \"so big~\""
+subtitle:   " \"~~~~~\""
 date:       2018-05-20 12:00:00
 author:     "the Little Prince"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg.jpg"
 catalog: true
 navbarClass: ""
 tags:
