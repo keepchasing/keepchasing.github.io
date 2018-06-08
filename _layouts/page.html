@@ -97,18 +97,16 @@ layout: default
                     </div>
                 </section>
                 {% endif %}
-
                 <!-- Short About -->
-                <section class="visible-md visible-lg">
+               <!--  <section class="visible-md visible-lg">
                     <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
-                            <!-- <img src="{{site.sidebar-avatar}}" /> -->
+                            <img src="{{site.sidebar-avatar}}" />
                         {% endif %}
                         {% if site.sidebar-about-description %}
                             <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
-                        <!-- SNS Link -->
                         <ul class="list-inline">
                             {% if site.RSS %}
                             <li>
@@ -182,9 +180,10 @@ layout: default
                             {% endif %}
                         </ul>
                     </div>
-                </section>
+                </section> -->
+               
                 <!-- Friends Blog -->
-                {% if site.friends %}
+                <!-- {% if site.friends %}
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
@@ -192,7 +191,7 @@ layout: default
                         <li><a href="{{friend.href}}">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
-                {% endif %}
+                {% endif %} -->
     		</div>
         {% endif %}
 	</div>

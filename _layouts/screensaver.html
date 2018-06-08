@@ -1,0 +1,148 @@
+---
+layout: default
+---
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+    }
+
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
+	#c1{background:#000;}
+</style>
+<script>
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n)+n);
+	}
+	window.onload=function(){
+		var oC = document.querySelector('#c1');
+		var gc = oC.getContext('2d'); 
+		var winW = document.querySelector('.main-content').clientWidth;
+		var winH = 500;
+		oC.width=winW;
+		oC.height=winH;
+		var N = 5;
+		var M = 10;
+		var aPoint = [];
+		for(var i=0;i<N;i++){
+			aPoint[i] = {
+				x:rnd(0,winW),
+				y:rnd(0,winH),
+				speedX:rnd(-10,10),
+				speedY:rnd(-10,10)
+			};
+		}
+		
+		//画点
+		for(var i=0;i<N;i++){
+			drawPoint(aPoint[i]);
+		}
+		let oldArr = [];
+		setInterval(() => {
+			gc.clearRect(0,0,winW,winH);
+			let newStroke = [];
+			for(let i = 0; i < N; i++){
+				aPoint[i].x += aPoint[i].speedX;
+				aPoint[i].y += aPoint[i].speedY;
+				if(aPoint[i].x > winW)
+				{
+					aPoint[i].x = winW;
+					aPoint[i].speedX *= -1;
+				}
+				if(aPoint[i].x < 0)
+				{
+					aPoint[i].x = 0;
+					aPoint[i].speedX *= -1;
+				}
+				if(aPoint[i].y > winH)
+				{
+					aPoint[i].y = winH;
+					aPoint[i].speedY *= -1;
+				}
+				if(aPoint[i].y < 0)
+				{
+					aPoint[i].y = 0;
+					aPoint[i].speedY *= -1;
+				}
+				gc.fillRect(aPoint[i].x,aPoint[i].y,1,1);
+				newStroke.push({x:aPoint[i].x,y:aPoint[i].y})
+			}
+			
+			if(oldArr.length > M){
+				oldArr.shift();
+			}else{
+				oldArr.push(newStroke);
+			}
+			for(let i = 0; i < oldArr.length; i++)
+			{
+				drawStroke(oldArr[i]);
+			}
+		}, 16)
+		function drawPoint(point){
+			gc.fillStyle='#fff';
+			gc.fillRect(point.x,point.y,1,1);
+		}
+		function drawStroke(aPoint){
+			gc.beginPath();
+			gc.strokeStyle='#fff';
+			gc.moveTo(aPoint[0].x,aPoint[0].y);
+			let N = aPoint.length;
+			for(let i = 1; i < N; i++)
+			{
+				gc.lineTo(aPoint[i].x,aPoint[i].y);
+			}
+			gc.closePath();
+			gc.stroke();
+		}
+	};
+</script>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %}
+                        always create a h2 for keeping the margin , Hux
+                    {% endcomment %}
+                    {% comment %} if page.subtitle {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% comment %} endif {% endcomment %}
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+                <canvas id="c1"></canvas>
+                <div class="main-content">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
