@@ -50,7 +50,7 @@ layout: default
                 {% endif %}
 
                 <!-- Friends Blog -->
-                {% if site.friends %}
+                <!-- {% if site.friends %}
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
@@ -58,7 +58,7 @@ layout: default
                         <li><a href="{{friend.href}}">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
-                {% endif %}
+                {% endif %} -->
             </div>
         {% else %}
 
@@ -97,6 +97,7 @@ layout: default
                     </div>
                 </section>
                 {% endif %}
+                <hr class="hidden-sm hidden-xs">
                 <!-- Short About -->
                <!--  <section class="visible-md visible-lg">
                     <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
