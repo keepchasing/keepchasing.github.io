@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "js模板引擎之artTemplate"
-subtitle:   " \"artTemplate简单应用\""
+subtitle:   "artTemplate简单应用"
 date:       2017-11-24 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"

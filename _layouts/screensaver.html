@@ -22,16 +22,16 @@ layout: default
 		return parseInt(Math.random()*(m-n)+n);
 	}
 	window.onload=function(){
-		var oC = document.querySelector('#c1');
-		var gc = oC.getContext('2d'); 
-		var winW = document.querySelector('.main-content').clientWidth;
-		var winH = 500;
-		oC.width=winW;
-		oC.height=winH;
-		var N = 5;
-		var M = 10;
-		var aPoint = [];
-		for(var i=0;i<N;i++){
+		let oC = document.querySelector('#c1');
+		let gc = oC.getContext('2d'); 
+		let winW = document.querySelector('.main-content').clientWidth;
+		let winH = 500;
+		oC.width = winW;
+		oC.height = winH;
+		const N = 5;
+		const M = 10;
+		let aPoint = [];
+		for(let i = 0;i < N;i++){
 			aPoint[i] = {
 				x:rnd(0,winW),
 				y:rnd(0,winH),
@@ -41,7 +41,7 @@ layout: default
 		}
 		
 		//画点
-		for(var i=0;i<N;i++){
+		for(let i = 0;i < N;i++){
 			drawPoint(aPoint[i]);
 		}
 		let oldArr = [];

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "javascript中this的指向问题"
-subtitle:   " \"this指向及this指向变更\""
+subtitle:   "this指向及this指向变更"
 date:       2018-04-05 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"

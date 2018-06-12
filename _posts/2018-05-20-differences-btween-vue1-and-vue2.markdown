@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Different from vue1.x and vue2.x"
-subtitle:   " \"~~~~~\""
+subtitle:   ""
 date:       2018-05-20 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"
