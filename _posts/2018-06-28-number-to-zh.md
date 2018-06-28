@@ -2,7 +2,7 @@
 layout:     post
 title:      "数字转大写汉字"
 subtitle:   "支持千万亿单位"
-date:       2017-06-28 12:00:00
+date:       2018-06-28 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"
 catalog: true

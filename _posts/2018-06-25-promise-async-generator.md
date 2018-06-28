@@ -2,7 +2,7 @@
 layout:     post
 title:      "async await、Promise.all、generator yield的应用"
 subtitle:   ""
-date:       2017-06-25 12:00:00
+date:       2018-06-25 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"
 catalog: true

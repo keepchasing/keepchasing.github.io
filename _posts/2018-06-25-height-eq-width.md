@@ -2,7 +2,7 @@
 layout:     post
 title:      "实现子元素高度与宽度相等，宽度相对于父元素等比缩放 且绝对居中于父元素的两种方式"
 subtitle:   ""
-date:       2017-06-25 12:00:00
+date:       2018-06-25 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"
 catalog: true
