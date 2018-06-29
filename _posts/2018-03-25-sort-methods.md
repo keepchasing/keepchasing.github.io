@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Array sort methods"
-subtitle:   ""
+subtitle:   "冒泡、快速排序"
 date:       2018-03-25 12:00:00
 author:     "the Little Prince"
 header-img: "img/post-bg.jpg"
