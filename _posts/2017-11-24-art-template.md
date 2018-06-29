@@ -46,6 +46,28 @@ tags:
 
 ```
 
+### 模板是一个独立的文件（list-template.html）
+
+```
+<script>
+let listArr = [
+  {name:'Joe',age:'9'},
+  {name:'Nate',age:'2'},
+  {name:'Chuck',age:'7'}
+]
+// 利用ajax的get方法获取模板页
+var html=$.get('list-template.html',function (data) {
+  // 利用template.compile()获取渲染内容
+  var render = template.compile(data);
+  // 将数据listArr渲染进去
+  var str = render(listArr);
+  // 将内容添加到页面
+  document.getElementById('content').innerHTML = str;
+})
+</script>
+
+```
+
 
 
 
