@@ -15,6 +15,9 @@ tags:
 
 ```
     Function.prototype.rewriteBind = function() {
+        if (typeof this !== 'function') {
+            throw new TypeError("NOT_A_FUNCTION");
+        }
         var self = this;
         var context = [].shift.apply(arguments);
         var args = [].slice.apply(arguments);
